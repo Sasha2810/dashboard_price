@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+    <style>
+        body 
+        .libre-baskerville-regular {
+            font-family: "Libre Baskerville", serif;
+            font-weight: 400;
+            font-style: normal;
+            }
+
+        .libre-baskerville-bold {
+            font-family: "Libre Baskerville", serif;
+            font-weight: 700;
+            font-style: normal;
+            }
+
+        .libre-baskerville-regular-italic {
+            font-family: "Libre Baskerville", serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #2c2c2c; 
+            color: #eee1d4;
+            font-size: 1cm;
+            padding: 10px;
+        }
+        .header_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #2c2c2c; 
+            color: #eee1d4;
+            font-size: 1cm;
+            padding: 18px;
+        }
+        .center-text {
+            font-size: 1cm;
+        }
+        .tab {
+            flex: 1;
+            text-align: center;
+            background-color: #ee7828;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 0.8cm; 
+        }
+        .tab.active {
+            background-color: #806d61; 
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .image img {
+            filter: brightness(40%)
+                }
+    </style>
+    <title>Dashboard Engineering squad</title>
+        <body>
+                <div class="tab-container">
+                    <div class="center-text">Добро пожаловать!</div>
+                </div>
+                <div class="header_container">
+                    <div class="tab" onclick="openTab('tab1')">Главная</div>
+                    <div class="tab" onclick="openTab('tab2')">Курсы</div>
+                    <div class="tab" onclick="openTab('tab3')">Предсказания</div>
+                    <div class="tab" onclick="openTab('tab4')">Новости</div>
+                </div>
+
+                <div id="tab1" class="tab-content active">
+                    <h2>Содержимое вкладки 1</h2>
+                    <div class="image">
+                        <img src="кот.png" alt="кот" style="width:1130px; " >
+                    </div>
+                        
+                </div>
+                <div id="tab2" class="tab-content">
+                    <h2>Содержимое вкладки 2</h2>
+                    <iframe src="http://127.0.0.1:2456/dash/" width="100%" height="600"></iframe>
+                    <iframe src="http://127.0.0.1:2456/dash2/" width="100%" height="600"></iframe>
+                    <iframe src="http://127.0.0.1:2456/dash3/" width="100%" height="600"></iframe>
+                </div>
+                <div id="tab3" class="tab-content">
+                    <h2>Содержимое вкладки 3</h2>
+                    <iframe src="http://127.0.0.1:2456/dash4/" width="100%" height="600"></iframe>
+                    <iframe src="http://127.0.0.1:2456/dash5/" width="100%" height="600"></iframe>
+                </div>
+                <div id="tab4" class="tab-content">
+                    <h2>Содержимое вкладки 4</h2>
+                </div>
+
+                <script>
+                    function openTab(tabName) {
+                        var tabs = document.getElementsByClassName('tab-content');
+                        for (var i = 0; i < tabs.length; i++) {
+                            tabs[i].classList.remove('active');
+                        }
+                        document.getElementById(tabName).classList.add('active');
+
+                        var buttons = document.getElementsByClassName('tab');
+                        for (var j = 0; j < buttons.length; j++) {
+                            buttons[j].classList.remove('active');
+                        }   
+                        event.target.classList.add('active');
+                    }
+                </script>
+        </body>
+    <footer> 
+        <style>
+            footer {
+                background-color: #333; 
+                color: white; 
+                text-align: center; 
+                padding: 20px; 
+                width: 1115px;
+            } 
+        </style> 
+        <p>Made by engineering squad</p> 
+    </footer> 
+</body> 
+</html>
